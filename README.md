@@ -1,3 +1,4 @@
+
 # Todo App
 
 This is a simple Todo application built using React.js with Vite and shadcn/ui for the frontend and Express.js with MongoDB for the backend.
@@ -17,21 +18,21 @@ Make sure you have the following installed:
 
 Clone the project
 
-bash
+```bash
   git clone https://link-to-project
-
+```
 
 Install dependencies
 
-bash
+```bash
   npm install
-
+```
 
 Start the server
 
-bash
+```bash
   npm run start
-
+```
 This will start the development server at http://localhost:3000
 
 
@@ -49,19 +50,19 @@ Open your web browser and navigate to http://localhost:3000 to view the Todo app
 This API provides endpoints to manage todo items in the todo application.
 
 ### Base URL
-bash
+```bash
   http://localhost:3000
-
+```
 
 #### Create a new todo item
 
-http
+```http
 POST /api/todos
+```
 
+**Request Body:**
 
-*Request Body:*
-
-json
+```json
 {
   "task": "New Task",
   "date": "2024-05-03T12:00:00.000Z",
@@ -69,11 +70,11 @@ json
   "isCompleted": false,
   "collection": "default"
 }
+```
 
+**Response Body:**
 
-*Response Body:*
-
-json
+```json
 {
   "id": 2,
   "task": "New Task",
@@ -82,22 +83,22 @@ json
   "isCompleted": false,
   "collection": "default"
 }
-
+```
 
 
 #### Get all todos
 
-http
+```http
   GET /api/todos
-
+```
 
 | Parameter | Type     | Description                |
 | :-------- | :------- | :------------------------- |
-| null | Array | Retrieves all todo items. |
+| `null` | `Array` | Retrieves all todo items. |
 
 
 Response Body:
-code
+```code
 [
   {
     "id": 1,
@@ -109,22 +110,22 @@ code
   },
   ...
 ]
-
+```
 
 #### Get all todo items sorted
 
-http
+```http
   GET /api/todos/sort/:criteria
-
+```
 
 | Parameter | Type     | Description                       |
 | :-------- | :------- | :-------------------------------- |
-| criteria      | string | Retrieves all todo items sorted by the provided criteria |
+| `criteria`      | `string` | Retrieves all todo items sorted by the provided criteria |
 
-criteria = priority, date
+criteria = `priority`, `date`
 
 Response Body: 
-output
+```output
 [
   {
     "id": 1,
@@ -136,61 +137,61 @@ output
   },
   ...
 ]
-
+```
 
 
 
 #### Delete todo items by collection
 
-http
+```http
 DELETE /api/todos/:collection
-
+```
 
 | Parameter | Type     | Description                       |
 | :-------- | :------- | :-------------------------------- |
-| \collection\| \string\ | Collection name                   |
+| \`collection\`| \`string\` | Collection name                   |
 
-*Response Body:*
+**Response Body:**
 
-json
+```json
 [
   {
   "message": "Records deleted successfully"
 }
 ]
-
+```
 
 #### Delete todo item by ID
 
-http
+```http
 DELETE /api/todos/delete/:id
-
+```
 
 | Parameter | Type     | Description                  |
 | :-------- | :------- | :--------------------------- |
-| \id\      | \number\ | Todo item ID                |
+| \`id\`      | \`number\` | Todo item ID                |
 
-*Response Body:*
+**Response Body:**
 
-json
+```json
 {
   "message": "Records deleted successfully"
 }
-
+```
 
 #### Update todo item by ID
 
-http
+```http
 PUT /api/todos/:id
-
+```
 
 | Parameter | Type     | Description                  |
 | :-------- | :------- | :--------------------------- |
-| \id\      | \number\ | Todo item ID                |
+| \`id\`      | \`number\` | Todo item ID                |
 
-*Request Body:*
+**Request Body:**
 
-json
+```json
 {
   "task": "Updated Task",
   "date": "2024-05-02T12:00:00.000Z",
@@ -198,11 +199,11 @@ json
   "isCompleted": true,
   "collection": "default"
 }
+```
 
+**Response Body:**
 
-*Response Body:*
-
-json
+```json
 {
   "id": 1,
   "task": "Updated Task",
@@ -211,22 +212,22 @@ json
   "isCompleted": true,
   "collection": "default"
 }
-
+```
 
 
 #### Update todo item by ID
 
-http
+```http
 PATCH /api/todos/:id
-
+```
 
 | Parameter | Type     | Description                  |
 | :-------- | :------- | :--------------------------- |
-| \id\      | \number\ | Todo item ID                |
+| \`id\`      | \`number\` | Todo item ID                |
 
-*Request Body:*
+**Request Body:**
 
-json
+```json
 {
   "task": "Updated Task",
   "date": "2024-05-02T12:00:00.000Z",
@@ -234,11 +235,11 @@ json
   "isCompleted": true,
   "collection": "default"
 }
+```
 
+**Response Body:**
 
-*Response Body:*
-
-json
+```json
 {
   "id": 1,
   "task": "Updated Task",
@@ -247,3 +248,4 @@ json
   "isCompleted": true,
   "collection": "default"
 }
+```
